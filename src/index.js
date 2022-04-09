@@ -12,6 +12,8 @@ const countryInfo = document.querySelector('.country-info');
 inputRef.addEventListener('input', debounce( inputCountry, DEBOUNCE_DELAY ));
 
 function inputCountry(val) {
+    countryList.innerHTML = '';
+    countryInfo.innerHTML = '';
     const nameInput = val.target.value.trim();
 
     fetchCountries(nameInput)
@@ -30,10 +32,24 @@ function createCountryInfo(data) {
         return
     }
     
-    markupCountriesList(data, option)
+    markupCountriesList(data)
 }
 
 function createError() {
     Notify.failure('Oops, there is no country with that name')
     return
+}
+
+function markupCountriesList(data) {
+    countryInfo.textContent = '';
+
+    const create = data.map(({ flags, name }) => `
+    <li class="country-item"> 
+    <img src="${flags.svg}" alt="${name.official}"
+    width="60px" height="40px">
+    <p class="county-name"> ${name.official} </p>
+    </li>
+    `,).join('');
+
+    countryList.innerHTML = create;
 }
