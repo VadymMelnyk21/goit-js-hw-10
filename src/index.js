@@ -65,7 +65,7 @@ function markupCountriesList(data) {
     const create = data.map(({ flags, name }) => `
     <li class="country-item"> 
     <img src="${flags.svg}" alt="${name.official}"
-    width="60px" height="40px">
+    width="90px" height="60px">
     <p class="county-name"> ${name.official} </p>
     </li>
     `,).join('');
@@ -75,6 +75,7 @@ function markupCountriesList(data) {
 
 function createError() {
     Notify.failure('Oops, there is no country with that name')
+    inputRef.value='';
     return
 }
 
