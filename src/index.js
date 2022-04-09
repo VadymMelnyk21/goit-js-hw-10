@@ -18,3 +18,7 @@ inputCountry(val){
         .then(createCountryInfo)
         .catch(createError)
 }
+
+function createError() {
+    Notify.failure('Oops, there is no country with that name')
+}
