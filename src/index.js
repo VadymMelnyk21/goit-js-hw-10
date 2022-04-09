@@ -45,9 +45,10 @@ function oneCountyInfo(data) {
     countryList.innerHTML = '';
 
     countryInfo.innerHTML = `
+    <div class="info-container">
     <img src="${flags.svg}" alt="${name.official}"
-    width="60px" height="40px">
-    <p class="county-name"> ${name.official} </p>
+    width="320px" class="country__img">
+    <p class="county-name--one"> ${name.official} </p>
     <ul class="one-country__list">
         <li class="one-country__item"> Capital: ${capital}
         </li>
@@ -56,6 +57,7 @@ function oneCountyInfo(data) {
         <li class="one-country__item"> Languages: ${languages}
         </li>
     </ul>
+    </div>
     `
 }
 
@@ -75,7 +77,7 @@ function markupCountriesList(data) {
 
 function createError() {
     Notify.failure('Oops, there is no country with that name')
-    inputRef.value='';
+    inputRef.value = '';
     return
 }
 

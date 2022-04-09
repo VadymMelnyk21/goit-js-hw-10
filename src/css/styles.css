@@ -7,7 +7,8 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background: repeating-linear-gradient(to right, transparent 0 29px, #e1e1e1 0 30px);
   color: #212121;
   line-height: 1.5;
 }
@@ -17,6 +18,8 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2)
 }
 
 /* трошки стилів */
@@ -31,11 +34,18 @@ p {
   margin-bottom: 0;
 }
 
+.center-information{
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+
 .country-item{
   display: flex;
   align-items: center;
   padding: 10px;
-background-color: rgb(238, 243, 243);
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2)
 }
 
 .country-item:not(:last-child) {
@@ -44,4 +54,23 @@ background-color: rgb(238, 243, 243);
 
 .county-name{
   margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.county-name--one{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.info-container{
+  width: 340px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)
+}
+
+.country__img{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
 }
