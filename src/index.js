@@ -8,8 +8,12 @@ const inputRef = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-inputRef.addEventListener('input', debounce(inputCountry, DEBOUNCE_DELAY));
+inputRef.addEventListener('input', debounce( inputCountry, DEBOUNCE_DELAY ));
 
 inputCountry(val){
+    const nameInput = val.target.value.trim();
+
     fetchCountries(nameInput)
+        .then(createCountryInfo)
+        .catch(createError)
 }
