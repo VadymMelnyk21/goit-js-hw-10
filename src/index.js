@@ -27,6 +27,7 @@ function inputCountry(val) {
 function createCountryInfo(data) {
     if (data.length > 10) {
         Notify.info('Too many matches found. Please enter a more specific name.');
+        clearContent()
         return;
     }
 
@@ -77,7 +78,8 @@ function markupCountriesList(data) {
 
 function createError() {
     Notify.failure('Oops, there is no country with that name')
-    inputRef.value = '';
+    // inputRef.value = '';
+    clearContent()
     return
 }
 
