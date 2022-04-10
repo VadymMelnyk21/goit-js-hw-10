@@ -47,6 +47,7 @@ function oneCountyInfo(data) {
 
     countryInfo.innerHTML = `
     <div class="info-container">
+    ${name.official === 'Ukraine' ? `<h1><strong>Слава Україні!</strong></h1>` : ''}
     <img src="${flags.svg}" alt="${name.official}"
     width="320px" class="country__img">
     <p class="county-name--one"> ${name.official} </p>
